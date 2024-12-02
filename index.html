@@ -11,6 +11,7 @@
         }
         h1 {
             font-size: 24px;
+            cursor: pointer;
         }
         p {
             font-size: 16px;
@@ -30,17 +31,17 @@
     </style>
 </head>
 <body>
-    <h1>Sara Du</h1>
-    <p><strong><a href="#" onclick="showPage('home')">Home</a></strong> | <strong><a href="#" onclick="showPage('investing')">Investing</a></strong></p>
+    <h1 onclick="showPage('home')">Sara Du</h1>
+    <p><strong><a href="#" onclick="showPage('investing')">Investing</a></strong> | <strong><a href="#" onclick="showPage('press')">Press</a></strong></p>
     
-    <div id="home" class="page">
+    <div id="home" class="page" style="display: block;">
         <h2>Welcome to My Website</h2>
         <p>This is the home page.</p>
     </div>
 
     <div id="investing" class="page">
         <h2>Investing</h2>
-        <p>I invest in all sorts of software and hardware startups. Below are a few investments from my 40+ portfolio.</p>
+        <p>I invest in all sorts of software and hardware startups. Below are just a few investments from my 40+ portfolio.</p>
         <ul>
             <li>Formal — Data inventory & monitoring tool</li>
             <li>Stealth — Next-gen law enforcement ERP</li>
@@ -50,6 +51,18 @@
             <li>Orchard Robotics — AI-based precision crop management</li>
             <li>Didero — Autonomous supply chain software</li>
             <li>Artie — AI for database to warehouses</li>
+        </ul>
+    </div>
+
+    <div id="press" class="page">
+        <h2>Press</h2>
+        <p>Here are some articles and features:</p>
+        <ul>
+            <li><a href="https://www.forbes.com" target="_blank">Forbes: Under 30 Magazine Cover 2023</a></li>
+            <li><a href="https://www.alloy.com" target="_blank">a16z: Investing in Alloy's Series A</a></li>
+            <li><a href="https://techcrunch.com" target="_blank">TechCrunch: Alloy raises $20M to scale its automation tech</a></li>
+            <li><a href="https://www.axios.com" target="_blank">Axios: Alloy Bags $20M from a16z</a></li>
+            <li><a href="https://www.bain.com" target="_blank">Bain: Investing in Alloy's Seed</a></li>
         </ul>
     </div>
 
