@@ -1,2 +1,68 @@
-<h1>hdey</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sara Du</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 16px;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        .links a {
+            display: block;
+            color: #1a0dab;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+        .page {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sara Du</h1>
+    <p><strong><a href="#" onclick="showPage('home')">Home</a></strong> | <strong><a href="#" onclick="showPage('investing')">Investing</a></strong></p>
+    
+    <div id="home" class="page">
+        <h2>Welcome to My Website</h2>
+        <p>This is the home page.</p>
+    </div>
 
+    <div id="investing" class="page">
+        <h2>Investing</h2>
+        <p>I invest in all sorts of software and hardware startups. Below are a few investments from my 40+ portfolio.</p>
+        <ul>
+            <li>Formal — Data inventory & monitoring tool</li>
+            <li>Stealth — Next-gen law enforcement ERP</li>
+            <li>Haize — LLM stress testing</li>
+            <li>Matrices — AI spreadsheet that fills itself</li>
+            <li>Stealth — AI robots for general-purpose tasks</li>
+            <li>Orchard Robotics — AI-based precision crop management</li>
+            <li>Didero — Autonomous supply chain software</li>
+            <li>Artie — AI for database to warehouses</li>
+        </ul>
+    </div>
+
+    <!-- JavaScript goes here -->
+    <script>
+        function showPage(page) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(p => p.style.display = 'none');
+            
+            // Show the selected page
+            document.getElementById(page).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
