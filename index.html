@@ -10,14 +10,17 @@
             margin: 40px;
         }
         h1 {
-            font-size: 24px;
+            font-size: 32px;
             cursor: pointer;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 24px;
+            margin-top: 0;
         }
         p {
             font-size: 16px;
-        }
-        .links {
-            margin-top: 20px;
+            line-height: 1.6;
         }
         .links a {
             display: block;
@@ -25,57 +28,29 @@
             text-decoration: none;
             margin: 5px 0;
         }
+        .links {
+            margin-top: 20px;
+        }
         .page {
             display: none;
         }
     </style>
 </head>
 <body>
-    <h1 onclick="showPage('home')">Sara Du</h1>
-    <p><strong><a href="#" onclick="showPage('investing')">Investing</a></strong> | <strong><a href="#" onclick="showPage('press')">Press</a></strong></p>
+    <h1 onclick="window.location.href='index.html'">Sara Du</h1>
+    <p><strong><a href="investing.html">Investing</a></strong> | <strong><a href="press.html">Press</a></strong></p>
     
     <div id="home" class="page" style="display: block;">
-        <h2>Welcome to My Website</h2>
-        <p>This is the home page.</p>
-    </div>
+        <h2>I cofounded <a href="https://www.alloy.com" target="_blank">Alloy</a>, a modern iPaaS backed by $27M from a16z, Bain, Y Combinator, & others. These days I'm thinking a lot about AI agents.</h2>
+        <p>In my spare time, I enjoy studying technology more broadly — history, market currents, emerging research. I also support other founders as an angel, see more on my <a href="investing.html">Investing</a> page.</p>
+        <p>I'm a self-taught engineer, Harvard dropout, YC grad, & Thiel Fellow. I grew up in Atlanta and currently reside in SF.</p>
 
-    <div id="investing" class="page">
-        <h2>Investing</h2>
-        <p>I invest in all sorts of software and hardware startups. Below are just a few investments from my 40+ portfolio.</p>
-        <ul>
-            <li>Formal — Data inventory & monitoring tool</li>
-            <li>Stealth — Next-gen law enforcement ERP</li>
-            <li>Haize — LLM stress testing</li>
-            <li>Matrices — AI spreadsheet that fills itself</li>
-            <li>Stealth — AI robots for general-purpose tasks</li>
-            <li>Orchard Robotics — AI-based precision crop management</li>
-            <li>Didero — Autonomous supply chain software</li>
-            <li>Artie — AI for database to warehouses</li>
-        </ul>
+        <div class="links">
+            <a href="https://www.linkedin.com/in/saradu" target="_blank">LinkedIn (@saradu)</a>
+            <a href="https://twitter.com/saraduit" target="_blank">Twitter (@saraduit)</a>
+            <a href="https://www.instagram.com/sarad.u" target="_blank">Instagram (@sarad.u)</a>
+            <a href="https://substack.com" target="_blank">Substack</a>
+        </div>
     </div>
-
-    <div id="press" class="page">
-        <h2>Press</h2>
-        <p>Here are some articles and features:</p>
-        <ul>
-            <li><a href="https://www.forbes.com" target="_blank">Forbes: Under 30 Magazine Cover 2023</a></li>
-            <li><a href="https://www.alloy.com" target="_blank">a16z: Investing in Alloy's Series A</a></li>
-            <li><a href="https://techcrunch.com" target="_blank">TechCrunch: Alloy raises $20M to scale its automation tech</a></li>
-            <li><a href="https://www.axios.com" target="_blank">Axios: Alloy Bags $20M from a16z</a></li>
-            <li><a href="https://www.bain.com" target="_blank">Bain: Investing in Alloy's Seed</a></li>
-        </ul>
-    </div>
-
-    <!-- JavaScript goes here -->
-    <script>
-        function showPage(page) {
-            // Hide all pages
-            const pages = document.querySelectorAll('.page');
-            pages.forEach(p => p.style.display = 'none');
-            
-            // Show the selected page
-            document.getElementById(page).style.display = 'block';
-        }
-    </script>
 </body>
 </html>
