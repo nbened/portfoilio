@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventures</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><a href="index.html" style="text-decoration: none;">Ventures</a></h1>
+            <nav class="nav">
+                <a href="projects.html">Projects</a>
+                <a href="about.html">About</a>
+                <a href="ventures.html">Ventures</a>
+            </nav>
+        </div>
+
+        <div id="ventures-list" class="project-list">
+            <!-- Ventures will be dynamically loaded here -->
+        </div>
+
+    </div>
+
+    <script src="ventures.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const venturesList = document.getElementById('ventures-list');
+            if (typeof ventures !== 'undefined' && Array.isArray(ventures)) {
+                ventures.forEach(venture => {
+                    const ventureElement = document.createElement('div');
+                    ventureElement.classList.add('project-item');
+                    ventureElement.innerHTML = `
+                        <h2><a href="${venture.link}" style="text-decoration: none;">${venture.title}</a></h2>
+
+                        <hr>
+                        <p>${venture.subtitle}</p>
+                                                <p>${venture.dateRange}</p>
+
+
+                    `;
+                    venturesList.appendChild(ventureElement);
+                });
+            } else {
+                console.error("Ventures data is not available or not an array.");
+            }
+        });
+    </script>
+</body>
+</html>

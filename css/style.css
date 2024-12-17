@@ -36,3 +36,22 @@ a {
 .project-item {
     margin-bottom: 30px;
 }
+
+.size-6 {
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    transition: transform 0.2s ease-in-out;
+}
+
+a:hover .size-6 {
+    transform: scale(1.2);
+}
+
+.date-range {
+    display: inline-block;
+    float: right;
+    font-size: 0.8em;
+    color: #666;
+    margin-left: auto;
+}

@@ -9,29 +9,44 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1><a href="index.html" style="text-decoration: none;">Your Name</a></h1>
+            <h1><a href="index.html" style="text-decoration: none;">Projects</a></h1>
             <nav class="nav">
                 <a href="projects.html">Projects</a>
-                <a href="press.html">Press</a>
+                <a href="about.html">About</a>
+                <a href="ventures.html">Ventures</a>
             </nav>
         </div>
 
-        <h2>Projects</h2>
-        
-        <div class="project-item">
-            <h3>Project One</h3>
-            <p>Description of your first project and its impact...</p>
-        </div>
-
-        <div class="project-item">
-            <h3>Project Two</h3>
-            <p>Description of your second project and its impact...</p>
-        </div>
-
-        <div class="project-item">
-            <h3>Project Three</h3>
-            <p>Description of your third project and its impact...</p>
-        </div>
+        <div id="projects-list"></div>
     </div>
+
+    <script src="projects.js"></script>
+    <script>
+        const projectsList = document.getElementById('projects-list');
+        projectsData.forEach(project => {
+            const projectItem = document.createElement('div');
+            projectItem.classList.add('project-item');
+
+            const projectTitle = document.createElement('h3');
+            if (project.link) {
+                const projectLink = document.createElement('a');
+                projectLink.href = project.link;
+                projectLink.target = "_blank";
+                projectLink.style.textDecoration = "none";
+                projectLink.style.color = "inherit";
+                projectLink.innerHTML = `${project.title} <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>`;
+                projectTitle.appendChild(projectLink);
+            } else {
+                projectTitle.textContent = project.title;
+            }
+
+            const projectDescription = document.createElement('p');
+            projectDescription.textContent = project.description;
+
+            projectItem.appendChild(projectTitle);
+            projectItem.appendChild(projectDescription);
+            projectsList.appendChild(projectItem);
+        });
+    </script>
 </body>
 </html>
